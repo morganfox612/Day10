@@ -1,35 +1,24 @@
-let balance = 100
 let fare = 2.75
-
-class Rider {
-  constructor(anx) {
-    this.anxiety = anx
-  }
-}
-
-class MetroCard {
-  constructor(amt) {
-    this.amt = amt
-  }
-}
+let person = prompt("What is your name?")
+let train = []
 
 getCard = () => {
   let amount = prompt("How much would you like to add?")
-  balance -= (amount - 1)
-  let card = new MetroCard(parseInt(amount))
-  return card
+  card = parseInt(amount)
 }
 
-newCard = getCard()
-
-swipe = (card) => {
-  console.log(fare)
-  console.log(card)
-  if (card.amt < fare) {
+swipe = () => {
+  if (card < fare) {
     return "INSUFFICIENT FARE"
-  } else if (card.amt >= fare) {
+  } else if (card >= fare) {
     card -= fare
-    console.log(card.amt)
+    train.push(person)
     return "G0"
   }
 }
+
+// create a card variable
+// swipe the Card
+// check to see if the card has enough FARE
+// if yes, get on train
+// if no, refill card
